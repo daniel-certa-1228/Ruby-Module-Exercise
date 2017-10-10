@@ -1,4 +1,5 @@
 module Properties
+
   module ClassMethods
     def four_legs
       "Has four legs"
@@ -8,6 +9,10 @@ module Properties
         "Cherry"
     end
   end
+
+  def self.included(base)
+      base.extend(ClassMethods)
+  end #extends Class methods to be accessible from an instance
 
   def description
     puts "This piece has four legs and is made of cherry."

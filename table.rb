@@ -6,7 +6,6 @@ require_relative 'furniture'
 class Table < Furniture
 
 	include Properties
-	include ClassMethods
 
 	def seating(num)
 		puts "This table will comfortably seat #{num} homies."
@@ -15,9 +14,9 @@ class Table < Furniture
 end
 
 table = Table.new
-# puts table
+
 puts table.total_size(36,48,36)
 puts table.seating(4)
-# puts table.four_legs
-# puts table.type_of_wood
 puts table.description
+puts Table.four_legs  #accessible because of extend hook
+puts Table.type_of_wood #accessible because of extend hook
